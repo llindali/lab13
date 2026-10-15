@@ -1,7 +1,7 @@
 # Lab 13 — Portfolio Mandate Defense
 **Student:** Linda Li  
 **Client:** Meridian Foundation Reserve (fictional)  
-**Status:** Checker verified; student responses listed below remain pending.
+**Status:** Checker verified; required written sections supplied. Review notes distinguish the student's initial claims from technical qualifications.
 
 ## Decision question
 Which portfolios does Meridian's mandate permit, and what must the CIO answer before anyone optimizes?
@@ -75,10 +75,12 @@ With AI closed, write two sentences judging whether the objection holds and iden
 
 **Review note:** S2 is the relevant statement, but a guaranteed shortfall or mathematical impossibility is not established by the supplied case. Cash yields, inflation, and costs are not given. The supported objection is that passing the checker does not demonstrate that 100% cash can meet S2; the CIO could reasonably reject D for lacking a credible basis for meeting that objective.
 
-### Skeptical-colleague role — pending
+### Skeptical-colleague role
 This is an individual lab; play the skeptical colleague as directed rather than claiming a partner meeting occurred.
 
-**Statement cited against D and reason:** [Pending student response.]
+**Student response:** I cite S4 (the 60% global equities / 40% U.S. investment-grade bonds benchmark). Allocating 100% to cash abandons the risk and asset-class structure designated to anchor performance and introduces substantial benchmark-relative risk.
+
+**Review note:** The allocation differs sharply from the benchmark, but actual tracking error cannot be quantified without return data or a risk model. S4 does not impose a tracking-error cap or mandate exact benchmark weights. It supports a suitability challenge and a request for justification, rather than an automatic compliance failure.
 
 ## One question for the CIO
 Write with AI closed.
@@ -97,19 +99,38 @@ An investment policy statement (IPS) records a client's investment objectives, c
 
 Here, S2 states the return objective and S4 supplies its performance reference. S1 and S3 define horizon, rebalancing, and payout needs. S5–S8 constrain implementation, concentration, turnover, and liquidity. S9 expresses a downside concern requiring clarification before it can become an operational policy. S10 identifies missing optimization direction and the absence of additional preferences. The classification table maps each statement individually.
 
-## Reflection — pending student responses
-1. **Why can a portfolio pass every checkable rule and still be wrong for this client?** [Pending.]
-2. **Which S1–S10 classification were you least sure of, and why?** [Pending.]
+## Reflection
+### 1. Why can a portfolio pass every checkable rule and still be unsuitable?
+**Student response (terminology clarified):** This checker evaluates static boundary conditions such as exposure caps, liquidity floors, and non-negativity constraints. Passing proves compliance with those tested boundaries, not economic viability or alignment with the client's long-term obligations, return targets, or asset-liability matching needs.
 
-## Project 2 client mandate — pending client selection
-AI assistance is permitted for this section. No client choice has yet been supplied.
+### 2. Which classification was least certain, and why?
+**Student response:** S9 was the least certain. It sounds like a hard constraint, but lacks a defined risk measure, breach protocol, and execution mechanics, so it cannot be tested as written or treated as a guaranteed outcome in volatile public markets.
 
-- **Client:** [Pending.]
-- **Objective:** [Pending.]
-- **Hard constraints:** [Pending.]
-- **One question for the client:** [Pending.]
+**Review note:** VaR or Expected Shortfall is one possible formalization, not a required choice. Even with a statistical framework, a modeled risk threshold would not guarantee a maximum realized loss.
+
+## Project 2 client mandate
+**Client:** Apex University Student Investment Fund (ASIF) Endowment Reserve, fictional.  
+**Initial assets:** $50 million.
+
+### Objective and performance reference
+Maintain purchasing power by targeting an annualized return of CPI + 4.5%, net of all operational and custodial fees, over rolling ten-year periods. Benchmark: 70% MSCI World / 30% Bloomberg Aggregate. The benchmark is a performance reference; no tracking-error limit has yet been approved.
+
+### Hard constraints
+- Fund an annual operating distribution equal to 3% of the initial $50 million reserve: $1.5 million annually, paid as $0.375 million quarterly.
+- Maintain at least $1.5 million in a liquid cash/Treasury buffer to cover twelve months of distributions.
+- Long-only; no short positions, borrowing, or synthetic leverage.
+- Single-issuer concentration must not exceed 5% of fund assets.
+
+**Implementation assumptions to confirm:** The payout figures above use initial assets; the client has not specified whether future distributions reset to current NAV. Aggregation of an issuer's securities, Treasury/fund exemptions, and fund look-through treatment must be settled before coding the 5% rule. No exemption is silently imported from Meridian.
+
+### One governing question for the client
+What maximum annualized tracking error relative to the 70/30 benchmark will the investment committee authorize while pursuing the CPI + 4.5% net return target?
+
+**How the answer changes the design:** A tight tracking-error budget would favor allocations close to the benchmark, adjusted for the mandatory payout buffer. A wider budget would permit larger active allocation differences, provided the portfolio still satisfies all constraints. No numeric threshold or optimized weights are assumed; if the return target and approved risk budget are incompatible, the committee must resolve that conflict.
+
+**Unresolved policy:** No ESG or fossil-fuel exclusion policy has been supplied, so none is assumed. A risk budget would ordinarily set a maximum volatility or tracking error; a volatility floor would require a separate rationale.
 
 ## Submission
-Submit individual GitHub links to this Markdown file and `mandate.py` through the Lab 13 quiz after completing the pending responses.
+Submit individual GitHub links to this Markdown file and `mandate.py` through the Lab 13 quiz.
 
 Source: [Lab 13 instructions](https://github.com/CinderZhang/FIN43900-Fall2026/blob/main/lessons/week-08/lab-13-portfolio-mandate.md).
