@@ -80,7 +80,7 @@ This is an individual lab; play the skeptical colleague as directed rather than 
 
 **Statement cited against D and reason:** [Pending student response.]
 
-## One question for the CIO — pending
+## One question for the CIO
 Write with AI closed.
 
 **Student-supplied design consequences:**
@@ -89,7 +89,7 @@ Write with AI closed.
 
 **Review notes:** These are conditional design ideas, not computed allocations. Exact minimum-tracking-error weights require a specified risk model, and a reserve allocation need not be exclusively cash/short Treasuries under the supplied table. A 95% VaR limit is a probabilistic model constraint: it does not prevent all losses above 10%, and the resulting allocation depends on the model and feasibility. The available non-fund Treasury holdings are bills and a 10-year note; a new intermediate-maturity holding is outside the lab's table.
 
-**One question that blocks optimization:** [Still pending student wording.]  
+**One question that blocks optimization:** What mathematical objective function should the pilot portfolio optimize—specifically, should the model minimize tracking error against the 60/40 benchmark (S4), or maximize expected return net of costs subject to a formal risk threshold for the calendar-year loss target (S9)?  
 **Answer that changes the design:** The alternatives above provide the student's proposed consequences, subject to the review notes.
 
 ## Investment policy statement — learning notes
