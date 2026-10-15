@@ -50,14 +50,18 @@ Only long-only fails. The saved candidate A retains Cash = 2 and equities = 60.
 ### Scope of the checker
 This static weight checker tests the five rules requested in the assignment. It does not establish the return target, future losses, annual rebalancing, historical turnover, or the absence of derivatives/borrowing beyond the supplied holdings representation. Those require additional evidence or clarification.
 
-## Code understanding quiz — pending student response
+## Code understanding quiz — completed
 In this line, what does `issuers.get(issuer, 0)` do, and why do we add `weight` to it?
 
 ```python
 issuers[issuer] = issuers.get(issuer, 0) + weight
 ```
 
-**Student answer:** [Pending. Answer before requesting the explanation.]
+**Student answer:** This line accumulates the total portfolio weight for each unique issuer in the `issuers` dictionary. `issuers.get(issuer, 0)` returns the accumulated weight if the issuer already exists, or 0 if it does not, avoiding a `KeyError`. Adding the current holding's weight updates that issuer's total.
+
+Acme bonds and stock share the same `Acme Corp` key, so their weights are combined. In candidate B, 5% bonds plus 4% stock equals 9.0%. Each holding individually is below 8%, but their combined issuer exposure exceeds the limit and correctly produces FAIL.
+
+**Feedback after the student's answer:** Correct. The limit applies to aggregate corporate issuer exposure, not each security separately.
 
 ## Candidate D — AI-proposed attack
 D holds 100% Cash and 0% of all other holdings. The checker confirms that D passes all five checks.
