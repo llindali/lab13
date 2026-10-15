@@ -83,8 +83,14 @@ This is an individual lab; play the skeptical colleague as directed rather than 
 ## One question for the CIO — pending
 Write with AI closed.
 
-**One question that blocks optimization:** [Pending student response.]  
-**An answer that would change the portfolio, and how:** [Pending student response.]
+**Student-supplied design consequences:**
+1. If the CIO chooses tracking error minimization against the benchmark, the optimizer will anchor tightly around 60% global equities and approximately 37% core bonds, leaving 3% in reserve-eligible cash/short Treasuries, regardless of whether that mix meets CPI + 4% in low-return environments.
+2. If the CIO defines S9 as a hard tail-risk budget, such as 95% one-year VaR at most 10%, while maximizing return toward CPI + 4%, the optimizer will de-risk away from broad equities toward short-to-intermediate fixed income and cash equivalents, accepting greater benchmark tracking error.
+
+**Review notes:** These are conditional design ideas, not computed allocations. Exact minimum-tracking-error weights require a specified risk model, and a reserve allocation need not be exclusively cash/short Treasuries under the supplied table. A 95% VaR limit is a probabilistic model constraint: it does not prevent all losses above 10%, and the resulting allocation depends on the model and feasibility. The available non-fund Treasury holdings are bills and a 10-year note; a new intermediate-maturity holding is outside the lab's table.
+
+**One question that blocks optimization:** [Still pending student wording.]  
+**Answer that changes the design:** The alternatives above provide the student's proposed consequences, subject to the review notes.
 
 ## Investment policy statement — learning notes
 An investment policy statement (IPS) records a client's investment objectives, constraints, decision responsibilities, and monitoring framework. It guides portfolio construction and provides a reference for evaluating results and handling exceptions.
